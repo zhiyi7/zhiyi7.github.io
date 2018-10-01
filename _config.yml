@@ -10,3 +10,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-redirect-from
+
+sass:
+  style: compressed
