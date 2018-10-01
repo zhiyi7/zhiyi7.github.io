@@ -1,0 +1,23 @@
+---
+layout: default
+permalink: /404.html
+title: 404 Not Found
+---
+
+<div class="inner">
+    <h1>404 Not Found</h1>
+    <p class="mb3">很早以前的博文随着这几年技术的更新，已经失去了其原有意义，可以转到<a href="{{ site.url }}">首页</a>重新看新的博文</p>
+
+    <div class="label label-divider mb3">
+        <span>随机文章</span>
+    </div>
+          
+    <div class="card post">
+        <ul>
+            {% assign posts = site.posts | sample:10 %}
+            {% for post in posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

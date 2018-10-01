@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="inner">
+  <p class="label"><a href="{{ site.url }}">首页</a> / 博文 <span class="text-gray">/ {{ page.date | date_to_long_string }}</span></p>
+  <h1 class="">{{ page.title }}</h1>
+
+  <div class="card post-content mb2">
+    {{ content }}
+  </div>
+  <div class="label label-divider">
+    <span>其他文章</span>
+  </div>
+</div>
+
+<div class="outer post-pagination">
+  <div class="post-pagination-container">
+
+      {% if page.previous %}
+      <a href="{{ page.previous.url}}" class="pagination-left pagination-item">
+        <svg fill="none" viewBox="0 0 31.344 105.69" stroke="currentColor" stroke-width="3px" fill-rule="evenodd" width="100%" height="100%"><path d="M29.844 2.86l-25 50 25 50"></path></svg>
+        <div class="post-pagination-content">
+          <h4>{{ page.previous.title }}</h4>
+          <p>{{ page.previous.excerpt | strip_html | strip_newlines | truncate: 60 }}</p>
+        </div>
+      </a>
+      {% endif %}
+
+      {% if page.next %}
+      <a href="{{ page.next.url }}" class="pagination-right pagination-item">
+        <svg fill="none" viewBox="0 0 30.69 103" stroke="currentColor" stroke-width="3px" fill-rule="evenodd" width="100%" height="100%"><path d="M4.19 1.51l25 50-25 50"></path></svg>
+        <div class="post-pagination-content">
+          <h4>{{ page.next.title }}</h4>
+          <p>{{ page.next.excerpt | strip_html | strip_newlines | truncate: 60 }}</p>
+        </div>
+      </a>
+      {% endif %}
+
+  </div>
+</div>

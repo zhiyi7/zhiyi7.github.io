@@ -1,1 +1,12 @@
+title: 一路凯歌
+description: 分享技术和好玩的事物
+show_downloads: false
+google_analytics:
 theme: jekyll-theme-slate
+paginate: 10
+github: [metadata]
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from

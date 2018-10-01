@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<section id="main_content" class="inner">
+  <div class="posts">
+    {% for post in paginator.posts %}
+      <div class="card post mb3">
+        <div class="post-date label text-gray">{{ post.date | date_to_string }}</div>
+        <h3 class="post-title">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        <div class="post-summary">
+          {{ post.excerpt }}
+        </div>
+        <div class="post-more">
+            <a href="{{ post.url }}">继续阅读</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination links -->
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="btn previous">
+        上一页
+      </a>
+    {% else %}
+      <span class="btn disabled previous">上一页</span>
+    {% endif %}
+    
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="btn next">下一页</a>
+    {% else %}
+      <span class="btn disabled next">下一页</span>
+    {% endif %}
+  </div>
+</section>
